@@ -1,4 +1,3 @@
-const { Recipe, Diet } = require("../db");
 const {
   getAllRecipes,
   getRecipeByIdAPI,
