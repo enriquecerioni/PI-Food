@@ -29,7 +29,8 @@ module.exports = (sequelize) => {
       type: DataTypes.ARRAY(DataTypes.STRING)
     },
     mine: {
-      type: DataTypes.BOOLEAN
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
     }
   });
 };

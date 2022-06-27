@@ -1,0 +1,16 @@
+.paginate {
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid white; */
+    margin: 2rem 40rem 0rem 40rem;
+}
+
+.ulPaginate{
+    background-color:#db4242;
+    color:black;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    margin-left: 0.5rem;
+    list-style: none;
+    cursor: pointer;
+}

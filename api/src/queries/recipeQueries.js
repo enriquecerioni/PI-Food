@@ -6,7 +6,7 @@ const { API_KEY } = process.env;
 // FIND ALL RECIPES
 exports.getAllRecipes = async () => {
   const apiRecipes = await axios.get(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&numer=10&addRecipeInformation=true`
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=100&addRecipeInformation=true`
   );
   const recipeInfo = await apiRecipes.data?.results.map((e) => {
     return {
@@ -48,6 +48,11 @@ exports.getRecipeByIdAPI = async (id) => {
       `https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}&number=10`
     );
 
+    // const steps = await axios.get(
+    //   `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=100&addRecipeInformation=true`
+    // ).data;
+    // console.log(steps)
+
     const recipe = recipeById.data;
 
     return {
@@ -59,6 +64,8 @@ exports.getRecipeByIdAPI = async (id) => {
       diets: recipe.diets.map((e) => {
         return { name: e };
       }),
+      steps: recipe.analyzedInstructions.map(s => s.steps)
+      // steps: steps
     };
   } catch (error) {
     return undefined;
@@ -82,21 +89,28 @@ exports.getRecipeByIdBD = async (id) => {
   }
 };
 
-exports.createRecipe = async (title, summary, healthScore, steps, image, diets) => {
+exports.createRecipe = async (
+  title,
+  summary,
+  healthScore,
+  analizedInstructions,
+  image,
+  diets
+) => {
   let newRecipe = await Recipe.create({
     title,
     summary,
     healthScore,
-    analyzedInstructions:steps,
+    analizedInstructions,
     image,
   });
 
-  diets?.forEach(async(diet) => {
+  diets?.forEach(async (diet) => {
     let dietFound = await Diet.findOne({
-        where: {
-            name: diet,
-        }
-    })
+      where: {
+        name: diet,
+      },
+    });
     newRecipe.addDiet(dietFound);
-});
+  });
 };

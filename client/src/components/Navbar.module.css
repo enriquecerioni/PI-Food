@@ -1,0 +1,35 @@
+.boxNav{
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 12rem;
+}
+
+.reload{
+    background-color: #db4242;
+    padding: 1rem 1.5rem;
+    border: 3px solid white;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.create{
+    background-color: #42db42;
+    padding: 1rem 1.5rem;
+    border: 3px solid white;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.selects{
+    background-color: #4296db;
+    padding: 1rem 1.5rem;
+    border: 3px solid white;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}

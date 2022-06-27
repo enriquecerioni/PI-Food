@@ -2,8 +2,8 @@ const { getDiets } = require("../queries/dietQueries");
 
 exports.getAllDiets = async (req, res, next) => {
     try{
-        const diets = getDiets();
-        res.send(diets)
+        let diets = await getDiets();
+        res.json(diets)
       } catch (error) {
         next(error)
       }

@@ -1,0 +1,115 @@
+.boxCreate {
+    border-radius: 5rem;
+    border: 5px solid white;
+    width: 40%;
+    /* height: 100vh; */
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+.textCreate{
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.divCreate{
+    background-color: #db4242;
+    padding: 0.25rem 0.5rem;
+    border: 3px solid white;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 30rem;
+    height: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.divErrors {
+    background-color: white;
+    border-radius: 1rem;
+    color: red;
+    position: relative;
+    margin-left:200px;
+    border: 2px solid black;
+}
+
+.divErrorButton {
+    background-color: white;
+    border-radius: 1rem;
+    color: red;
+    position: relative;
+    width: 90%;
+    border: 2px solid black;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.inputCreate{
+    margin-left: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid white;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.divGenres{
+    background-color: #db4242;
+    padding: 0.25rem 0.5rem;
+    border: 3px solid white;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 30rem;
+    height: 3rem;
+}
+
+.buttonEmpty{
+    margin-left: 0.5rem;
+    background-color: #db4242;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: 3px solid white;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.buttonCreate{
+    margin-top: 1.5rem;
+    background-color: #42db42;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: 3px solid white;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.buttonGenres{
+    background-color: #db4242;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: 3px solid white;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.goBack{
+    background-color: #db4242;
+    padding: 1rem 1.5rem;
+    border: 3px solid white;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
