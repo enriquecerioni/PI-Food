@@ -95,7 +95,7 @@ exports.createRecipe = async (
   healthScore,
   analizedInstructions,
   image,
-  diets
+  diets,
 ) => {
   let newRecipe = await Recipe.create({
     title,

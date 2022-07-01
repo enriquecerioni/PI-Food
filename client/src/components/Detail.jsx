@@ -27,7 +27,7 @@ const Detail = () => {
           />
           <div className={styles.textDetail}>
             <p>
-              <strong>Tipo de Dietas:</strong>{" "}
+              <strong>Tipo de Dietas:</strong>
               {recipe.diets.map((d) => d.name + ", ")}
             </p>
             <p>
@@ -38,7 +38,7 @@ const Detail = () => {
               <strong>Puntaje Saludable:</strong> {recipe.healthScore}
             </p>
             <p>
-              <strong>Pasos de la Receta:</strong>{" "}
+              <strong>Pasos de la Receta:</strong>
               {recipe.analizedInstructions ? recipe.analizedInstructions.map((s) => s + ", ") : recipe.steps[0].map((s) => s.step)}
             </p>
           </div>
