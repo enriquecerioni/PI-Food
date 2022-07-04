@@ -1,0 +1,70 @@
+.formLabel {
+    display: block;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 10px;
+    min-height: 20px;
+    cursor: pointer;
+}
+
+.formLabelError {
+    display: block;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 10px;
+    min-height: 20px;
+    cursor: pointer;
+    color: red;
+}
+
+.formValid {
+    border: 3px solid transparent;
+}
+
+.formError {
+    border: 3px solid red !important;
+}
+
+.inputCreate {
+    /* margin-left: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid white;
+    border-radius: 1rem;
+    font-weight: bold;*/
+    font-size: 20px;
+    width: 50%;
+    background: #fff;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0px 10px 0px 10px;
+    transition: .3s ease all;
+    border: 3px solid transparent;
+}
+
+.inputCreate:focus {
+    border: 3px solid blue;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4)
+}
+
+.spanError {
+    font-size: 18px;
+    margin-bottom: 0;
+    color: red;
+    display: block;
+}
+
+.spanValid {
+    font-size: 18px;
+    margin-bottom: 0;
+    color: green;
+    display: block;
+}
+
+.spanNeutral {
+    font-size: 18px;
+    margin-bottom: 0;
+    color: rgb(63, 63, 255);
+    display: block;
+}

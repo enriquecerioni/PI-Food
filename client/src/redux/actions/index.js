@@ -9,6 +9,7 @@ export const FILTER_RECIPE_BY_DIET = "FILTER_RECIPE_BY_DIET";
 export const ORDER_BY_TITLE = "ORDER_BY_TITLE";
 export const ORDER_BY_SCORE = "ORDER_BY_SCORE";
 export const FILTER_BY_CREATE = "FILTER_BY_CREATE"
+export const POST_RECIPE = "POST_RECIPE"
 
 //actions
 export function getRecipes(){
@@ -45,6 +46,13 @@ export function getDiets(){
             type: GET_ALL_DIETS,
             payload: obj.data
         })
+    }
+}
+
+export function postRecipe(payload){
+    return async function (dispatch){
+        const recipe = await axios.post("http://localhost:3001/recipes", payload);
+        return recipe;
     }
 }
 
