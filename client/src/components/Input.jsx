@@ -39,6 +39,7 @@ const Input = ({
     setState({
       ...state,
       field: [...state.field, step],
+      step: ""
     });
   }
 
@@ -147,7 +148,7 @@ const Input = ({
           /><br/>
 
           { state.step.length > 3 ?
-            <button onClick={() => handleAddStep(state.step)}>ADD</button>
+            <button type="button" onClick={() => handleAddStep(state.step)}>ADD</button>
             :
             <span className={styles.spanError}>El paso de la receta debe contener al menos 4 caracteres</span>
           }

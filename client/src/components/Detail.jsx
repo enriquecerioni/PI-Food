@@ -39,7 +39,7 @@ const Detail = () => {
             </p>
             <p>
               <strong>Pasos de la Receta:</strong>
-              {recipe.analizedInstructions ? recipe.analizedInstructions.map((s) => s + ", ") : recipe.steps[0].map((s) => s.step)}
+              {recipe.steps ? recipe.steps[0].map((s) => s.step) : recipe.analizedInstructions.map((s) => s + ", ")}
             </p>
           </div>
           <Link to="/home">
