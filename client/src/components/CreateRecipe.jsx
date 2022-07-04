@@ -18,7 +18,7 @@ const CreateRecipe = () => {
   const [healthScore, setHealthScore] = useState({ field: "", value: null });
   const [image, setImage] = useState({ field: "", value: null });
   const [diets, setDiets] = useState({ field: [], value: null });
-  const [steps, setSteps] = useState({ field: [], value: null });
+  const [steps, setSteps] = useState({ field: [], value: null, step: ""});
   const [formValid, setFormValid] = useState(null);
 
   const expresiones = {
@@ -44,8 +44,8 @@ const CreateRecipe = () => {
         summary: summary.field,
         healthScore: healthScore.field,
         image: image.field,
-        diets: [diets.field],
-        analizedInstructions: [steps.field]
+        diets: diets.field,
+        analizedInstructions: steps.field
       }))
       setFormValid(true);
       setTitle({ field: "", value: null });
@@ -53,7 +53,7 @@ const CreateRecipe = () => {
       setHealthScore({ field: "", value: null });
       setImage({ field: "", value: null });
       setDiets({ field: [], value: null });
-      setSteps({ field: [], value: null });
+      setSteps({ field: [], value: null, step: ""});
     } else {
       setFormValid(false);
     }
@@ -118,10 +118,11 @@ const CreateRecipe = () => {
         />
 
         <Input
+          key={steps}
           state={steps}
           setState={setSteps}
           label="Steps"
-          placeholder="Select steps..."
+          placeholder="Write the steps..."
           type="text"
           name="steps"
           legendError="El titulo debe contener al menos 3 caracteres."
@@ -148,14 +149,14 @@ const CreateRecipe = () => {
             healthScore.value === true &&
             image.value === true &&
             diets.value === true && diets.field.length > 0 &&
-            steps.value === true && (
+            steps.value === true && steps.field.length > 0 && (
               <button type="submit" className={styles.buttonCreate}>
                 Create Recipe
               </button>
             )}
-          {formValid && (
+          {/* {formValid && (
             <p className={styles.successMessage}>The recipe was created!</p>
-          )}
+          )} */}
         </div>
       </form>
     </div>

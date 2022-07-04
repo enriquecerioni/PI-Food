@@ -1,6 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getDiets } from "../redux/actions";
+import { useSelector } from "react-redux";
 import styles from "./Input.module.css";
 
 const Input = ({
@@ -22,12 +21,26 @@ const Input = ({
     });
   };
 
+  const onChangeStep = (e) => {
+    setState({
+      ...state,
+      step: e.target.value,
+    });
+  }
+
   const handleSelectChange = (e) => {
     setState({
       ...state,
       field: [...state.field, e.target.value],
     });
   };
+
+  const handleAddStep = (step) => {
+    setState({
+      ...state,
+      field: [...state.field, step],
+    });
+  }
 
   function handleDelete(e) {
     setState({
@@ -73,7 +86,8 @@ const Input = ({
             type={type}
             id={name}
             className={`${
-              state.field.length > 0 && state.value === true || state.value === null
+              (state.field.length > 0 && state.value === true) ||
+              state.value === null
                 ? styles.formValid
                 : styles.formError
             } ${styles.inputCreate}`}
@@ -87,15 +101,65 @@ const Input = ({
               return <option value={d.name}>{d.name}</option>;
             })}
           </select>
-          {state.field.map((g) => (
+          {state.field.map((d) => (
             <div>
-              <button type="button" onClick={() => handleDelete(g)}>
-                <p>{g} X</p>
+              <button type="button" onClick={() => handleDelete(d)}>
+                <p>{d} X</p>
               </button>
             </div>
           ))}
           <br />
-          { state.field.length > 0 && state.value === true  ? (
+          {state.field.length > 0 && state.value === true ? (
+            <span className={styles.spanValid}>Correct Field</span>
+          ) : state.value === null ? (
+            <span className={styles.spanNeutral}>
+              Please, complete the field
+            </span>
+          ) : (
+            <span className={styles.spanError}>{legendError}</span>
+          )}
+        </div>
+      ) : name === "steps" ? (
+        <div>
+          <label
+            htmlFor={name}
+            className={`${
+              state.value === false ? styles.formLabelError : styles.formLabel
+            }`}
+          >
+            {label}
+          </label>
+          <input
+            type={type}
+            id={name}
+            className={`${
+              (state.field.length > 0 && state.value === true) ||
+              state.value === null
+                ? styles.formValid
+                : styles.formError
+            } ${styles.inputCreate}`}
+            value={state.step}
+            onChange={onChangeStep}
+            onKeyUp={validate}
+            onBlur={validate}
+            valid={state.value}
+            placeholder={placeholder}
+          /><br/>
+
+          { state.step.length > 3 ?
+            <button onClick={() => handleAddStep(state.step)}>ADD</button>
+            :
+            <span className={styles.spanError}>El paso de la receta debe contener al menos 4 caracteres</span>
+          }
+          {state.field.map((s) => (
+            <div>
+              <button type="button" onClick={() => handleDelete(s)}>
+                <p>{s} X</p>
+              </button>
+            </div>
+          ))}
+          <br />
+          {state.field.length > 0 && state.value === true ? (
             <span className={styles.spanValid}>Correct Field</span>
           ) : state.value === null ? (
             <span className={styles.spanNeutral}>
