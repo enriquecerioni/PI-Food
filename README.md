@@ -39,9 +39,9 @@ DB_PASSWORD=passwordDePostgres
 DB_HOST=localhost
 ```
 
-Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
+Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credenciales para conectarte a postgres.
 
-Adicionalmente será necesario que creen desde postgres una base de datos llamada `food`.
+Adicionalmentees necesario crear desde postgres una base de datos llamada `food`.
 
 El contenido de `client` fue creado usando: Create React App.
 
