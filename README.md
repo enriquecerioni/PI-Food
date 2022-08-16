@@ -29,7 +29,7 @@ Crear una aplicación en la cual se puedan ver distintas recetas de comida junto
 - Aprender y practicar el workflow de GIT.
 - Usar y practicar testing.
 
-## Para poder levantar el proyecto de forma local debemos crear nuestro archivo contenedor de variables de entorno ".env"
+## Configuración para un despliegue local del proyecto
 
 En `api` crear un archivo llamado: `.env` que tenga la siguiente forma:
 
